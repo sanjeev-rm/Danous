@@ -11,6 +11,8 @@ struct ForgotPasswordResetPasswordView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    @EnvironmentObject var loginViewModel: LoginViewModel
+    
     @State var password: String = ""
     @State var confirmPassword: String = ""
     
@@ -63,7 +65,9 @@ extension ForgotPasswordResetPasswordView {
     }
     
     private var resetButton: some View {
-        DanousBasicButton(label: "Update") {}
+        DanousBasicButton(label: "Update") {
+            loginViewModel.showForgotPasswordView = false
+        }
     }
 }
 

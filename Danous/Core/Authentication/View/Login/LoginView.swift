@@ -9,6 +9,9 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
+    @EnvironmentObject var loginViewModel: LoginViewModel
+    
     @State var countryCode: String = ""
     @State var phone: String = ""
     @State var password: String = ""
@@ -41,6 +44,9 @@ struct LoginView: View {
                 .resizable()
                 .ignoresSafeArea()
         }
+        .fullScreenCover(isPresented: $loginViewModel.showForgotPasswordView, onDismiss: nil, content: {
+            ForgotPasswordView()
+        })
     }
 }
 
@@ -64,7 +70,8 @@ extension LoginView {
             DanousSecureField(value: $password, label: "password")
             
             Button {
-                // to forgot assword page
+                // to forgot password page
+                loginViewModel.showForgotPasswordView = true
             } label: {
                 Text("Forgot password ?")
                     .font(.caption)
@@ -74,7 +81,7 @@ extension LoginView {
     }
     
     private var inputFields: some View {
-        VStack(spacing: 32) {
+        VStack {
             phoneFields
             
             passwordField
@@ -85,8 +92,13 @@ extension LoginView {
     
     private var loginAndRegisterButtons: some View {
         VStack {
-            DanousBasicButton(label: "Login") {}
-            Button {} label: {
+            DanousBasicButton(label: "Login") {
+                authenticationViewModel.isLoggedIn = true
+            }
+            
+            Button {
+                authenticationViewModel.showSignUp = true
+            } label: {
                 HStack {
                     Text("Don't have an account?")
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
@@ -100,4 +112,6 @@ extension LoginView {
 
 #Preview {
     LoginView()
+        .environmentObject(AuthenticationViewModel())
+        .environmentObject(LoginViewModel())
 }

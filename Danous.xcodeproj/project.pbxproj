@@ -7,18 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70C0F772B280E7700FE2DD5 /* OnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F762B280E7700FE2DD5 /* OnboardingStepView.swift */; };
+		C70C0F792B2884C400FE2DD5 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F782B2884C400FE2DD5 /* OnboardingStep.swift */; };
+		C70C0F7D2B28857400FE2DD5 /* DanousImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F7C2B28857400FE2DD5 /* DanousImage.swift */; };
+		C70C0F7F2B288D4300FE2DD5 /* OnboardingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F7E2B288D4300FE2DD5 /* OnboardingProgressView.swift */; };
+		C70C0F812B28939000FE2DD5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F802B28939000FE2DD5 /* OnboardingView.swift */; };
+		C73795A12B295B4C009276DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795A02B295B4C009276DB /* LoginView.swift */; };
+		C73795A52B296E6A009276DB /* DanousTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795A42B296E6A009276DB /* DanousTextField.swift */; };
+		C73795A72B2974D9009276DB /* DanousBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795A62B2974D9009276DB /* DanousBasicButton.swift */; };
+		C73795A92B29E40A009276DB /* ForgotPasswordMobileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795A82B29E40A009276DB /* ForgotPasswordMobileView.swift */; };
+		C73795AB2B2A3A1D009276DB /* ForgotPasswordOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795AA2B2A3A1D009276DB /* ForgotPasswordOtpView.swift */; };
+		C73795AD2B2A3C61009276DB /* DanousAuthenticationPageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795AC2B2A3C61009276DB /* DanousAuthenticationPageTitle.swift */; };
+		C74A26152B2AE866000560C5 /* ForgotPasswordResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A26142B2AE866000560C5 /* ForgotPasswordResetPasswordView.swift */; };
+		C74A26192B2AEC20000560C5 /* RegisterNameAndPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A26182B2AEC20000560C5 /* RegisterNameAndPhoneView.swift */; };
+		C74A261B2B2AEDAC000560C5 /* RegisterOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A261A2B2AEDAC000560C5 /* RegisterOtpView.swift */; };
+		C74A261D2B2AEE1D000560C5 /* RegisterSetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A261C2B2AEE1D000560C5 /* RegisterSetPasswordView.swift */; };
+		C74A261F2B2AEED2000560C5 /* RegisterTermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A261E2B2AEED2000560C5 /* RegisterTermsAndConditionsView.swift */; };
+		C74A26212B2AF0C2000560C5 /* DanousSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A26202B2AF0C2000560C5 /* DanousSecureField.swift */; };
 		C751C58D2B247239004E4EB6 /* DanousApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751C58C2B247239004E4EB6 /* DanousApp.swift */; };
 		C751C58F2B247239004E4EB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C751C58E2B247239004E4EB6 /* ContentView.swift */; };
 		C751C5912B24723B004E4EB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C751C5902B24723B004E4EB6 /* Assets.xcassets */; };
 		C751C5942B24723B004E4EB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C751C5932B24723B004E4EB6 /* Preview Assets.xcassets */; };
+		C7FDB6EF2B2D5693007FED60 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6EE2B2D5693007FED60 /* AuthenticationViewModel.swift */; };
+		C7FDB6F12B2D5BB1007FED60 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6F02B2D5BB1007FED60 /* RegisterView.swift */; };
+		C7FDB6F32B2DDAF4007FED60 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6F22B2DDAF4007FED60 /* ForgotPasswordView.swift */; };
+		C7FDB6F52B2DDC1A007FED60 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6F42B2DDC1A007FED60 /* LoginViewModel.swift */; };
+		C7FDB6F72B2DF13F007FED60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7FDB6F62B2DF13F007FED60 /* LaunchScreen.storyboard */; };
+		C7FDB6FA2B2DF6AF007FED60 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6F92B2DF6AF007FED60 /* DashboardView.swift */; };
+		C7FDB6FE2B2DF759007FED60 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6FD2B2DF759007FED60 /* DashboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C70C0F762B280E7700FE2DD5 /* OnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepView.swift; sourceTree = "<group>"; };
+		C70C0F782B2884C400FE2DD5 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
+		C70C0F7C2B28857400FE2DD5 /* DanousImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousImage.swift; sourceTree = "<group>"; };
+		C70C0F7E2B288D4300FE2DD5 /* OnboardingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProgressView.swift; sourceTree = "<group>"; };
+		C70C0F802B28939000FE2DD5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C73795A02B295B4C009276DB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C73795A42B296E6A009276DB /* DanousTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousTextField.swift; sourceTree = "<group>"; };
+		C73795A62B2974D9009276DB /* DanousBasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousBasicButton.swift; sourceTree = "<group>"; };
+		C73795A82B29E40A009276DB /* ForgotPasswordMobileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordMobileView.swift; sourceTree = "<group>"; };
+		C73795AA2B2A3A1D009276DB /* ForgotPasswordOtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordOtpView.swift; sourceTree = "<group>"; };
+		C73795AC2B2A3C61009276DB /* DanousAuthenticationPageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousAuthenticationPageTitle.swift; sourceTree = "<group>"; };
+		C74A26142B2AE866000560C5 /* ForgotPasswordResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResetPasswordView.swift; sourceTree = "<group>"; };
+		C74A26182B2AEC20000560C5 /* RegisterNameAndPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameAndPhoneView.swift; sourceTree = "<group>"; };
+		C74A261A2B2AEDAC000560C5 /* RegisterOtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterOtpView.swift; sourceTree = "<group>"; };
+		C74A261C2B2AEE1D000560C5 /* RegisterSetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSetPasswordView.swift; sourceTree = "<group>"; };
+		C74A261E2B2AEED2000560C5 /* RegisterTermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTermsAndConditionsView.swift; sourceTree = "<group>"; };
+		C74A26202B2AF0C2000560C5 /* DanousSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousSecureField.swift; sourceTree = "<group>"; };
 		C751C5892B247239004E4EB6 /* Danous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Danous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C751C58C2B247239004E4EB6 /* DanousApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousApp.swift; sourceTree = "<group>"; };
 		C751C58E2B247239004E4EB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C751C5902B24723B004E4EB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C751C5932B24723B004E4EB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7FDB6EE2B2D5693007FED60 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		C7FDB6F02B2D5BB1007FED60 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C7FDB6F22B2DDAF4007FED60 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		C7FDB6F42B2DDC1A007FED60 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C7FDB6F62B2DF13F007FED60 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7FDB6F82B2DF1EA007FED60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C7FDB6F92B2DF6AF007FED60 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C7FDB6FD2B2DF759007FED60 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +96,7 @@
 		C70C0F712B258E6000FE2DD5 /* Launch Screen */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDB6F62B2DF13F007FED60 /* LaunchScreen.storyboard */,
 			);
 			path = "Launch Screen";
 			sourceTree = "<group>";
@@ -54,6 +104,8 @@
 		C70C0F722B258E7400FE2DD5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C70C0F7A2B2884C900FE2DD5 /* Model */,
+				C70C0F7B2B2884CE00FE2DD5 /* View */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -61,6 +113,8 @@
 		C70C0F732B258E7C00FE2DD5 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDB6EC2B2D563B007FED60 /* View */,
+				C7FDB6ED2B2D564A007FED60 /* View Model */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -68,6 +122,8 @@
 		C70C0F742B258E8200FE2DD5 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDB6FB2B2DF735007FED60 /* View */,
+				C7FDB6FC2B2DF73B007FED60 /* View Model */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -75,8 +131,62 @@
 		C70C0F752B258E9E00FE2DD5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C70C0F7C2B28857400FE2DD5 /* DanousImage.swift */,
+				C73795A42B296E6A009276DB /* DanousTextField.swift */,
+				C74A26202B2AF0C2000560C5 /* DanousSecureField.swift */,
+				C73795A62B2974D9009276DB /* DanousBasicButton.swift */,
+				C73795AC2B2A3C61009276DB /* DanousAuthenticationPageTitle.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C70C0F7A2B2884C900FE2DD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C70C0F782B2884C400FE2DD5 /* OnboardingStep.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C70C0F7B2B2884CE00FE2DD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C70C0F802B28939000FE2DD5 /* OnboardingView.swift */,
+				C70C0F762B280E7700FE2DD5 /* OnboardingStepView.swift */,
+				C70C0F7E2B288D4300FE2DD5 /* OnboardingProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C73795AE2B2A3EA0009276DB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C73795A02B295B4C009276DB /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C73795AF2B2A3EAD009276DB /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDB6F22B2DDAF4007FED60 /* ForgotPasswordView.swift */,
+				C73795A82B29E40A009276DB /* ForgotPasswordMobileView.swift */,
+				C73795AA2B2A3A1D009276DB /* ForgotPasswordOtpView.swift */,
+				C74A26142B2AE866000560C5 /* ForgotPasswordResetPasswordView.swift */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		C73795B02B2A3EC2009276DB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDB6F02B2D5BB1007FED60 /* RegisterView.swift */,
+				C74A26182B2AEC20000560C5 /* RegisterNameAndPhoneView.swift */,
+				C74A261A2B2AEDAC000560C5 /* RegisterOtpView.swift */,
+				C74A261C2B2AEE1D000560C5 /* RegisterSetPasswordView.swift */,
+				C74A261E2B2AEED2000560C5 /* RegisterTermsAndConditionsView.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		C751C5802B247239004E4EB6 = {
@@ -98,6 +208,7 @@
 		C751C58B2B247239004E4EB6 /* Danous */ = {
 			isa = PBXGroup;
 			children = (
+				C7FDB6F82B2DF1EA007FED60 /* Info.plist */,
 				C751C58C2B247239004E4EB6 /* DanousApp.swift */,
 				C751C58E2B247239004E4EB6 /* ContentView.swift */,
 				C751C5902B24723B004E4EB6 /* Assets.xcassets */,
@@ -113,6 +224,41 @@
 				C751C5932B24723B004E4EB6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7FDB6EC2B2D563B007FED60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C73795AE2B2A3EA0009276DB /* Login */,
+				C73795AF2B2A3EAD009276DB /* Forgot Password */,
+				C73795B02B2A3EC2009276DB /* Register */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7FDB6ED2B2D564A007FED60 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDB6EE2B2D5693007FED60 /* AuthenticationViewModel.swift */,
+				C7FDB6F42B2DDC1A007FED60 /* LoginViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		C7FDB6FB2B2DF735007FED60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDB6F92B2DF6AF007FED60 /* DashboardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7FDB6FC2B2DF73B007FED60 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7FDB6FD2B2DF759007FED60 /* DashboardViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7FDB6F72B2DF13F007FED60 /* LaunchScreen.storyboard in Resources */,
 				C751C5942B24723B004E4EB6 /* Preview Assets.xcassets in Resources */,
 				C751C5912B24723B004E4EB6 /* Assets.xcassets in Resources */,
 			);
@@ -185,8 +332,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7FDB6F52B2DDC1A007FED60 /* LoginViewModel.swift in Sources */,
+				C7FDB6FE2B2DF759007FED60 /* DashboardViewModel.swift in Sources */,
+				C7FDB6FA2B2DF6AF007FED60 /* DashboardView.swift in Sources */,
+				C74A261D2B2AEE1D000560C5 /* RegisterSetPasswordView.swift in Sources */,
+				C70C0F7D2B28857400FE2DD5 /* DanousImage.swift in Sources */,
+				C74A26152B2AE866000560C5 /* ForgotPasswordResetPasswordView.swift in Sources */,
+				C7FDB6F12B2D5BB1007FED60 /* RegisterView.swift in Sources */,
+				C73795A52B296E6A009276DB /* DanousTextField.swift in Sources */,
+				C74A261B2B2AEDAC000560C5 /* RegisterOtpView.swift in Sources */,
+				C70C0F772B280E7700FE2DD5 /* OnboardingStepView.swift in Sources */,
+				C74A26192B2AEC20000560C5 /* RegisterNameAndPhoneView.swift in Sources */,
+				C74A261F2B2AEED2000560C5 /* RegisterTermsAndConditionsView.swift in Sources */,
+				C70C0F7F2B288D4300FE2DD5 /* OnboardingProgressView.swift in Sources */,
+				C73795AD2B2A3C61009276DB /* DanousAuthenticationPageTitle.swift in Sources */,
+				C73795A92B29E40A009276DB /* ForgotPasswordMobileView.swift in Sources */,
+				C7FDB6F32B2DDAF4007FED60 /* ForgotPasswordView.swift in Sources */,
 				C751C58F2B247239004E4EB6 /* ContentView.swift in Sources */,
+				C70C0F792B2884C400FE2DD5 /* OnboardingStep.swift in Sources */,
 				C751C58D2B247239004E4EB6 /* DanousApp.swift in Sources */,
+				C73795AB2B2A3A1D009276DB /* ForgotPasswordOtpView.swift in Sources */,
+				C74A26212B2AF0C2000560C5 /* DanousSecureField.swift in Sources */,
+				C7FDB6EF2B2D5693007FED60 /* AuthenticationViewModel.swift in Sources */,
+				C73795A12B295B4C009276DB /* LoginView.swift in Sources */,
+				C73795A72B2974D9009276DB /* DanousBasicButton.swift in Sources */,
+				C70C0F812B28939000FE2DD5 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,9 +493,11 @@
 				DEVELOPMENT_TEAM = 255PJ663UF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Danous/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -352,9 +524,11 @@
 				DEVELOPMENT_TEAM = 255PJ663UF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Danous/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

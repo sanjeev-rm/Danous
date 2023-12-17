@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct OnboardingProgressView: View {
+    var currentOnboardingStep: OnboardingStep
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            ForEach(OnboardingStep.allCases, id: \.self) { onboardingStep in
+                let isPresenting = (currentOnboardingStep == onboardingStep)
+                RoundedRectangle(cornerRadius: 32)
+                    .frame(width: isPresenting ? 20 : 10, height: 8)
+                    .foregroundColor(isPresenting ? .accentColor : .white.opacity(0.5))
+            }
+        }
     }
 }
 
 #Preview {
-    OnboardingProgressView()
+    OnboardingProgressView(currentOnboardingStep: .one)
 }

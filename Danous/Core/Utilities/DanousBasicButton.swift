@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct DanousBasicButton: View {
+    var label: String
+    var action: () -> Void
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            action()
+        } label: {
+            Text(label)
+                .font(.title3.bold())
+                .padding(8)
+                .frame(maxWidth: .infinity)
+        }
+        .buttonStyle(.borderedProminent)
     }
 }
 
 #Preview {
-    DanousBasicButton()
+    DanousBasicButton(label: "Press me") {}
 }

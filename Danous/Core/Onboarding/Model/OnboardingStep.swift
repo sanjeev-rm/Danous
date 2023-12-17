@@ -25,15 +25,15 @@ enum OnboardingStep: CaseIterable {
         switch self {
         case .one: return "Create your digital wallet"
         case .two: return "Instant money transfers"
-        case .three: return "Seamless payments with QR code"
+        case .three: return "Seamless QR code payments"
         }
     }
     
     var description: String {
         switch self {
         case .one: return "You can create your digital wallet where you can securely store and manage your funds."
-        case .two: return "Easily transfer money between accounts with just a few taps. Whether it's splitting bills with friends or sending a gift, our app makes transactions quick and hassle-free."
-        case .three: return "Explore the convenience of scanning and making payments using QR codes. Simply scan, confirm, and you're done! Experience a new level of ease in your daily transactions."
+        case .two: return "Swiftly send money between accounts with just a few taps in seconds"
+        case .three: return "Effortlessly scan and pay instantly using our QR code feature."
         }
     }
 }

@@ -8,63 +8,42 @@
 import SwiftUI
 
 struct OnboardingStepView: View {
+    
+    var onboardingStep: OnboardingStep
+    
     var body: some View {
-        NavigationStack {
-            ZStack(alignment: .bottom) {
-                VStack {
-                    Spacer()
-                    Rectangle()
-                        .foregroundStyle(.background)
-                        .frame(height: 350)
-                        .overlay {
-                            VStack(spacing: 32) {
-                                
-                                Text("Create your digital wallet")
-                                    .font(.title.bold())
-                                
-                                Text("You can create your digital wallet, where you can securely store and manage your funds.")
-                                    .foregroundStyle(.secondary)
-                                
-                                Spacer()
-                                
-                                Button {
-                                } label: {
-                                    Text("Next")
-                                        .font(.title3.bold())
-                                        .padding(8)
-                                        .frame(maxWidth: .infinity)
-                                }
-                                .buttonStyle(.borderedProminent)
-                            }
-                            .multilineTextAlignment(.center)
-                            .padding(16)
-                            .padding(.vertical, 32)
+        ZStack(alignment: .center) {
+            onboardingStep.image
+                .offset(y: -80)
+            
+            VStack {
+                Spacer()
+                Rectangle()
+                    .foregroundStyle(Color(uiColor: .systemBackground))
+                    .frame(height: 350)
+                    .overlay {
+                        VStack(spacing: 32) {
+                            
+                            Text(onboardingStep.title)
+                                .font(.title.bold())
+                            
+                            Text(onboardingStep.description)
+                                .foregroundStyle(.secondary)
+                            
+                            Spacer()
                         }
-                }
-                .ignoresSafeArea()
+                        .multilineTextAlignment(.center)
+                        .padding(16)
+                        .padding(.vertical, 32)
+                    }
             }
-            .background {
-                Image("image3", bundle: nil)
-                    .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea()
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    ProgressView()
-                        .foregroundStyle(.background)
-                }
-                
-                ToolbarItem(placement: .topBarTrailing) {
-                    Text("Skip")
-                        .font(.callout)
-                        .foregroundStyle(.white)
-                }
-            }
+            .ignoresSafeArea()
         }
     }
 }
 
 #Preview {
-    OnboardingStepView()
+    NavigationStack {
+        OnboardingStepView(onboardingStep: .one)
+    }
 }

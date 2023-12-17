@@ -10,6 +10,8 @@ import SwiftUI
 struct RegisterTermsAndConditionsView: View {
     @Environment(\.dismiss) var dismiss
     
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
+    
     var body: some View {
         VStack {
             title
@@ -57,7 +59,9 @@ extension RegisterTermsAndConditionsView {
     }
     
     private var agreeButton: some View {
-        DanousBasicButton(label: "Agree") {}
+        DanousBasicButton(label: "Agree") {
+            authenticationViewModel.isLoggedIn = true
+        }
     }
 }
 

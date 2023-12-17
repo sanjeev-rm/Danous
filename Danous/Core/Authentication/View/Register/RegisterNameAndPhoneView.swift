@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RegisterNameAndPhoneView: View {
     
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
+    
     @State var name: String = ""
     @State var countryCode: String = ""
     @State var phone: String = ""
@@ -16,38 +18,36 @@ struct RegisterNameAndPhoneView: View {
     @State var showOtpView: Bool = false
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                title
-                
-                GeometryReader { geometry in
-                    ScrollView(showsIndicators: false) {
-                        VStack {
-                            inputFields
-                            
-                            Spacer()
-                            
-                            nextButton
-                        }
-                        .frame(minHeight: geometry.size.height)
+        VStack {
+            title
+            
+            GeometryReader { geometry in
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        inputFields
+                        
+                        Spacer()
+                        
+                        nextAndLoginButton
                     }
-                    .frame(width: geometry.size.width)
-                    .scrollBounceBehavior(.basedOnSize)
-                    .scrollDismissesKeyboard(.interactively)
+                    .frame(minHeight: geometry.size.height)
                 }
-                .padding()
-                .padding(.top, 16)
-                .background(Color(.systemBackground))
+                .frame(width: geometry.size.width)
+                .scrollBounceBehavior(.basedOnSize)
+                .scrollDismissesKeyboard(.interactively)
             }
-            .background {
-                Image(danousImage: .backgroundImage)
-                    .resizable()
-                    .ignoresSafeArea()
-            }
-            .navigationBarBackButtonHidden()
-            .navigationDestination(isPresented: $showOtpView) {
-                RegisterOtpView()
-            }
+            .padding()
+            .padding(.top, 16)
+            .background(Color(.systemBackground))
+        }
+        .background {
+            Image(danousImage: .backgroundImage)
+                .resizable()
+                .ignoresSafeArea()
+        }
+        .navigationBarBackButtonHidden()
+        .navigationDestination(isPresented: $showOtpView) {
+            RegisterOtpView()
         }
     }
 }
@@ -76,13 +76,27 @@ extension RegisterNameAndPhoneView {
         .padding(.horizontal, 1)
     }
     
-    private var nextButton: some View {
-        DanousBasicButton(label: "Next") {
-            showOtpView = true
+    private var nextAndLoginButton: some View {
+        VStack {
+            DanousBasicButton(label: "Next") {
+                showOtpView = true
+            }
+            
+            Button {
+                authenticationViewModel.showSignUp = false
+            } label: {
+                HStack {
+                    Text("Visiting again?")
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
+                    Text("Login")
+                }
+                .font(.callout)
+            }
         }
     }
 }
 
 #Preview {
     RegisterNameAndPhoneView()
+        .environmentObject(AuthenticationViewModel())
 }

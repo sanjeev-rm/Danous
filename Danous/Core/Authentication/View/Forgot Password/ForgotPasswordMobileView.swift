@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ForgotPasswordMobileView: View {
     
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
+    @EnvironmentObject var loginViewModel: LoginViewModel
+    
     @State var countryCode: String = ""
     @State var phone: String = ""
     @State var otp: String = ""
@@ -16,37 +19,35 @@ struct ForgotPasswordMobileView: View {
     @State var showVerifyPhone: Bool = false
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                title
-                
-                GeometryReader { geometry in
-                    ScrollView(showsIndicators: false) {
-                        VStack {
-                            inputFields
-                            
-                            Spacer()
-                            
-                            getOTPAndLoginButtons
-                        }
-                        .frame(minHeight: geometry.size.height)
+        VStack {
+            title
+            
+            GeometryReader { geometry in
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        inputFields
+                        
+                        Spacer()
+                        
+                        getOTPAndLoginButtons
                     }
-                    .frame(width: geometry.size.width)
-                    .scrollBounceBehavior(.basedOnSize)
-                    .scrollDismissesKeyboard(.interactively)
+                    .frame(minHeight: geometry.size.height)
                 }
-                .padding()
-                .padding(.top, 16)
-                .background(Color(.systemBackground))
+                .frame(width: geometry.size.width)
+                .scrollBounceBehavior(.basedOnSize)
+                .scrollDismissesKeyboard(.interactively)
             }
-            .background {
-                Image(danousImage: .backgroundImage)
-                    .resizable()
-                    .ignoresSafeArea()
-            }
-            .navigationDestination(isPresented: $showVerifyPhone) {
-                ForgotPasswordOtpView()
-            }
+            .padding()
+            .padding(.top, 16)
+            .background(Color(.systemBackground))
+        }
+        .background {
+            Image(danousImage: .backgroundImage)
+                .resizable()
+                .ignoresSafeArea()
+        }
+        .navigationDestination(isPresented: $showVerifyPhone) {
+            ForgotPasswordOtpView()
         }
     }
 }
@@ -78,7 +79,9 @@ extension ForgotPasswordMobileView {
                 showVerifyPhone = true
             }
             
-            Button {} label: {
+            Button {
+                loginViewModel.showForgotPasswordView = false
+            } label: {
                 HStack {
                     Text("Remembered the password?")
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
@@ -92,4 +95,5 @@ extension ForgotPasswordMobileView {
 
 #Preview {
     ForgotPasswordMobileView()
+        .environmentObject(AuthenticationViewModel())
 }
