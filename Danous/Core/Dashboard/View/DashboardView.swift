@@ -14,13 +14,14 @@ struct DashboardView: View {
     
     var body: some View {
         VStack {
-            VStack(spacing: 32) {
+            VStack(spacing: 44) {
                 searchBarAndSettingsButton
                 
                 greetingTitle
                     .padding(.leading)
             }
-            .padding([.horizontal, .top])
+            .padding()
+            .padding(.bottom, 32)
             .foregroundStyle(.white)
             
             featuresGrid
@@ -76,10 +77,52 @@ extension DashboardView {
     }
     
     private var featuresGrid: some View {
-        VStack {
+        VStack(spacing: 64) {
+            
+            HStack {
+                featureButton(feature: .scanQRCode)
+                Spacer()
+                featureButton(feature: .payAContact)
+                Spacer()
+                featureButton(feature: .payNumber)
+            }
+            
+            HStack {
+                featureButton(feature: .wallet)
+                Spacer()
+                featureButton(feature: .bankTransfer)
+                Spacer()
+                featureButton(feature: .splitBill)
+            }
+            
+            HStack {
+                featureButton(feature: .mobileRecharge)
+                Spacer()
+                featureButton(feature: .billPayment)
+                Spacer()
+                featureButton(feature: .tickets)
+            }
         }
+        .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .systemBackground))
+    }
+    
+    private func featureButton(feature: DashboardFeature) -> some View {
+        Button {
+            feature.action
+        } label: {
+            VStack(alignment: .center, spacing: 8) {
+                feature.image
+                    .dynamicTypeSize(.accessibility1)
+                    .foregroundStyle(.accent)
+                Text(feature.title)
+                    .font(.subheadline.bold())
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.secondary)
+            }
+            .frame(width: 80)
+        }
     }
 }
 
