@@ -12,6 +12,7 @@
 		C70C0F7D2B28857400FE2DD5 /* DanousImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F7C2B28857400FE2DD5 /* DanousImage.swift */; };
 		C70C0F7F2B288D4300FE2DD5 /* OnboardingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F7E2B288D4300FE2DD5 /* OnboardingProgressView.swift */; };
 		C70C0F812B28939000FE2DD5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C0F802B28939000FE2DD5 /* OnboardingView.swift */; };
+		C72B5C3A2B4720D000BB1E48 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B5C392B4720D000BB1E48 /* SearchView.swift */; };
 		C73795A12B295B4C009276DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795A02B295B4C009276DB /* LoginView.swift */; };
 		C73795A52B296E6A009276DB /* DanousTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795A42B296E6A009276DB /* DanousTextField.swift */; };
 		C73795A72B2974D9009276DB /* DanousBasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73795A62B2974D9009276DB /* DanousBasicButton.swift */; };
@@ -44,6 +45,7 @@
 		C70C0F7C2B28857400FE2DD5 /* DanousImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousImage.swift; sourceTree = "<group>"; };
 		C70C0F7E2B288D4300FE2DD5 /* OnboardingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProgressView.swift; sourceTree = "<group>"; };
 		C70C0F802B28939000FE2DD5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C72B5C392B4720D000BB1E48 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		C73795A02B295B4C009276DB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C73795A42B296E6A009276DB /* DanousTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousTextField.swift; sourceTree = "<group>"; };
 		C73795A62B2974D9009276DB /* DanousBasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousBasicButton.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				C7FDB6F92B2DF6AF007FED60 /* DashboardView.swift */,
+				C72B5C392B4720D000BB1E48 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				C7FDB6F32B2DDAF4007FED60 /* ForgotPasswordView.swift in Sources */,
 				C751C58F2B247239004E4EB6 /* ContentView.swift in Sources */,
 				C70C0F792B2884C400FE2DD5 /* OnboardingStep.swift in Sources */,
+				C72B5C3A2B4720D000BB1E48 /* SearchView.swift in Sources */,
 				C751C58D2B247239004E4EB6 /* DanousApp.swift in Sources */,
 				C73795AB2B2A3A1D009276DB /* ForgotPasswordOtpView.swift in Sources */,
 				C74A26212B2AF0C2000560C5 /* DanousSecureField.swift in Sources */,

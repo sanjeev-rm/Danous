@@ -9,28 +9,54 @@ import SwiftUI
 
 struct DashboardView: View {
     
+    @EnvironmentObject var dashboardViewModel: DashboardViewModel
+    
+    @State var showLoadingView: Bool = true
     @State var searchText: String = ""
     @State var userName: String = "John Doe"
     
     var body: some View {
-        VStack {
-            VStack(spacing: 44) {
-                searchBarAndSettingsButton
-                
-                greetingTitle
-                    .padding(.leading)
+        ZStack {
+            if dashboardViewModel.showSearchView {
+                SearchView(show: $dashboardViewModel.showSearchView)
+            } else {
+                VStack {
+                    if showLoadingView {
+                        Spacer()
+                        ProgressView()
+                            .tint(.white)
+                            .dynamicTypeSize(.accessibility1)
+                            .padding(44)
+                    } else {
+                        VStack {
+                            VStack(spacing: 44) {
+                                searchBarAndSettingsButton
+                                
+                                greetingTitle
+                                    .padding(.leading)
+                            }
+                            .padding()
+                            .padding(.bottom, 32)
+                            .foregroundStyle(.white)
+                            
+                            featuresGrid
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background {
+                    Image(danousImage: .backgroundImage)
+                        .resizable()
+                        .ignoresSafeArea()
+                }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        withAnimation {
+                            showLoadingView = false
+                        }
+                    }
+                }
             }
-            .padding()
-            .padding(.bottom, 32)
-            .foregroundStyle(.white)
-            
-            featuresGrid
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background {
-            Image(danousImage: .backgroundImage)
-                .resizable()
-                .ignoresSafeArea()
         }
     }
 }
@@ -40,6 +66,12 @@ extension DashboardView {
     private var searchBarAndSettingsButton: some View {
         HStack(spacing: 16) {
             searchBar
+                .onTapGesture {
+                    withAnimation(.easeIn) {
+                        dashboardViewModel.showSearchView = true
+                    }
+                }
+            
             settingsButton
         }
     }
@@ -80,27 +112,47 @@ extension DashboardView {
         VStack(spacing: 64) {
             
             HStack {
-                featureButton(feature: .scanQRCode)
+                featureButton(feature: .scanQRCode) {
+                    print("DEBUG: Pressed Scan QR Code")
+                }
                 Spacer()
-                featureButton(feature: .payAContact)
+                featureButton(feature: .payAContact) {
+                    withAnimation(.easeIn) {
+                        dashboardViewModel.showSearchView = true
+                    }
+                }
                 Spacer()
-                featureButton(feature: .payNumber)
+                featureButton(feature: .payNumber) {
+                    print("DEBUG: Pressed Pay number")
+                }
             }
             
             HStack {
-                featureButton(feature: .wallet)
+                featureButton(feature: .wallet) {
+                    print("DEBUG: Pressed Wallet")
+                }
                 Spacer()
-                featureButton(feature: .bankTransfer)
+                featureButton(feature: .bankTransfer) {
+                    print("DEBUG: Pressed Bank Trasfer")
+                }
                 Spacer()
-                featureButton(feature: .splitBill)
+                featureButton(feature: .splitBill) {
+                    print("DEBUG: Pressed Split Bill")
+                }
             }
             
             HStack {
-                featureButton(feature: .mobileRecharge)
+                featureButton(feature: .mobileRecharge) {
+                    print("DEBUG: Pressed Mobile Recharge")
+                }
                 Spacer()
-                featureButton(feature: .billPayment)
+                featureButton(feature: .billPayment) {
+                    print("DEBUG: Pressed Bill payment")
+                }
                 Spacer()
-                featureButton(feature: .tickets)
+                featureButton(feature: .tickets) {
+                    print("DEBUG: Pressed Tickets")
+                }
             }
         }
         .padding()
@@ -108,9 +160,9 @@ extension DashboardView {
         .background(Color(uiColor: .systemBackground))
     }
     
-    private func featureButton(feature: DashboardFeature) -> some View {
+    private func featureButton(feature: DashboardFeature, action: @escaping () -> Void) -> some View {
         Button {
-            feature.action
+            action()
         } label: {
             VStack(alignment: .center, spacing: 8) {
                 feature.image
@@ -128,4 +180,5 @@ extension DashboardView {
 
 #Preview {
     DashboardView()
+        .environmentObject(DashboardViewModel())
 }

@@ -48,17 +48,17 @@ enum DashboardFeature {
         }
     }
     
-    var action: () {
-        switch self {
-        case .scanQRCode: print("DEBUG: Pressed scan QR Code")
-        case .payAContact: print("DEBUG: Pressed Pay a Contact")
-        case .payNumber: print("DEBUG: Pressed Pay number")
-        case .wallet: print("DEBUG: Pressed Wallet")
-        case .bankTransfer: print("DEBUG: Pressed Bank Transfer")
-        case .splitBill: print("DEBUG: Pressed Split Bill")
-        case .mobileRecharge: print("DEBUG: Pressed Mobile Recharge")
-        case .billPayment: print("DEBUG: Pressed Bill Payment")
-        case .tickets: print("DEBUG: Pressed Tickets")
-        }
-    }
+//    var action: () {
+//        switch self {
+//        case .scanQRCode: print("DEBUG: Pressed scan QR Code")
+//        case .payAContact: print("DEBUG: Pressed Pay a Contact")
+//        case .payNumber: print("DEBUG: Pressed Pay number")
+//        case .wallet: print("DEBUG: Pressed Wallet")
+//        case .bankTransfer: print("DEBUG: Pressed Bank Transfer")
+//        case .splitBill: print("DEBUG: Pressed Split Bill")
+//        case .mobileRecharge: print("DEBUG: Pressed Mobile Recharge")
+//        case .billPayment: print("DEBUG: Pressed Bill Payment")
+//        case .tickets: print("DEBUG: Pressed Tickets")
+//        }
+//    }
 }
