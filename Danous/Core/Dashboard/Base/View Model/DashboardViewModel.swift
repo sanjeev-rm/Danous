@@ -11,4 +11,5 @@ class DashboardViewModel: ObservableObject {
     
     @Published var showSearchView: Bool = false
     @Published var showSplitBillView: Bool = false
+    @Published var showQRScannerView: Bool = false
 }

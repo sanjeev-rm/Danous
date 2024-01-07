@@ -121,7 +121,9 @@ extension DashboardView {
             
             HStack {
                 featureButton(feature: .scanQRCode) {
-                    print("DEBUG: Pressed Scan QR Code")
+                    withAnimation(.easeIn) {
+                        dashboardViewModel.showQRScannerView = true
+                    }
                 }
                 Spacer()
                 featureButton(feature: .payAContact) {

@@ -38,6 +38,9 @@
 		C77EEAA72B4938A4008BEF04 /* DanousUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAA62B4938A4008BEF04 /* DanousUser.swift */; };
 		C77EEAAB2B49C525008BEF04 /* SplitBillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAAA2B49C525008BEF04 /* SplitBillViewModel.swift */; };
 		C77EEAAD2B4A48EF008BEF04 /* SplitActivatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAAC2B4A48EF008BEF04 /* SplitActivatedView.swift */; };
+		C77EEAB32B4AB0D6008BEF04 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAB22B4AB0D6008BEF04 /* QRScannerView.swift */; };
+		C77EEAB62B4AB131008BEF04 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = C77EEAB52B4AB131008BEF04 /* CodeScanner */; };
+		C77EEABA2B4AB16F008BEF04 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAB92B4AB16F008BEF04 /* CameraManager.swift */; };
 		C793754B2B45CF8A00F2A52A /* DashboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793754A2B45CF8A00F2A52A /* DashboardFeature.swift */; };
 		C7FDB6EF2B2D5693007FED60 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6EE2B2D5693007FED60 /* AuthenticationViewModel.swift */; };
 		C7FDB6F12B2D5BB1007FED60 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6F02B2D5BB1007FED60 /* RegisterView.swift */; };
@@ -81,6 +84,8 @@
 		C77EEAA62B4938A4008BEF04 /* DanousUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousUser.swift; sourceTree = "<group>"; };
 		C77EEAAA2B49C525008BEF04 /* SplitBillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBillViewModel.swift; sourceTree = "<group>"; };
 		C77EEAAC2B4A48EF008BEF04 /* SplitActivatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitActivatedView.swift; sourceTree = "<group>"; };
+		C77EEAB22B4AB0D6008BEF04 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		C77EEAB92B4AB16F008BEF04 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		C793754A2B45CF8A00F2A52A /* DashboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFeature.swift; sourceTree = "<group>"; };
 		C7FDB6EE2B2D5693007FED60 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C7FDB6F02B2D5BB1007FED60 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77EEAB62B4AB131008BEF04 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,7 @@
 				C77EEAA52B493897008BEF04 /* Common */,
 				C77EEA932B482631008BEF04 /* Base */,
 				C77EEA942B482643008BEF04 /* Split Bill */,
+				C77EEAAE2B4AB065008BEF04 /* QR Scanner */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -305,6 +312,39 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C77EEAAE2B4AB065008BEF04 /* QR Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				C77EEAAF2B4AB0A7008BEF04 /* Model */,
+				C77EEAB02B4AB0AC008BEF04 /* View */,
+				C77EEAB12B4AB0B0008BEF04 /* ViewModel */,
+			);
+			path = "QR Scanner";
+			sourceTree = "<group>";
+		};
+		C77EEAAF2B4AB0A7008BEF04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C77EEAB92B4AB16F008BEF04 /* CameraManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C77EEAB02B4AB0AC008BEF04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C77EEAB22B4AB0D6008BEF04 /* QRScannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C77EEAB12B4AB0B0008BEF04 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C79375492B45CF7600F2A52A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +406,9 @@
 			dependencies = (
 			);
 			name = Danous;
+			packageProductDependencies = (
+				C77EEAB52B4AB131008BEF04 /* CodeScanner */,
+			);
 			productName = Danous;
 			productReference = C751C5892B247239004E4EB6 /* Danous.app */;
 			productType = "com.apple.product-type.application";
@@ -394,6 +437,9 @@
 				Base,
 			);
 			mainGroup = C751C5802B247239004E4EB6;
+			packageReferences = (
+				C77EEAB42B4AB131008BEF04 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = C751C58A2B247239004E4EB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -426,8 +472,10 @@
 				C7FDB6FA2B2DF6AF007FED60 /* DashboardView.swift in Sources */,
 				C77EEAAD2B4A48EF008BEF04 /* SplitActivatedView.swift in Sources */,
 				C74A261D2B2AEE1D000560C5 /* RegisterSetPasswordView.swift in Sources */,
+				C77EEAB32B4AB0D6008BEF04 /* QRScannerView.swift in Sources */,
 				C77EEAA42B4937B9008BEF04 /* SearchPersonCardView.swift in Sources */,
 				C77EEA962B48267E008BEF04 /* SplitBillView.swift in Sources */,
+				C77EEABA2B4AB16F008BEF04 /* CameraManager.swift in Sources */,
 				C77EEA982B482811008BEF04 /* AddNewPersonView.swift in Sources */,
 				C70C0F7D2B28857400FE2DD5 /* DanousImage.swift in Sources */,
 				C74A26152B2AE866000560C5 /* ForgotPasswordResetPasswordView.swift in Sources */,
@@ -588,12 +636,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Danous/Preview Content\"";
 				DEVELOPMENT_TEAM = 255PJ663UF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Danous/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "You'll use the camera to scan the QR code to make payments";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -619,12 +668,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Danous/Preview Content\"";
 				DEVELOPMENT_TEAM = 255PJ663UF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Danous/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "You'll use the camera to scan the QR code to make payments";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -666,6 +716,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C77EEAB42B4AB131008BEF04 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C77EEAB52B4AB131008BEF04 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C77EEAB42B4AB131008BEF04 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C751C5812B247239004E4EB6 /* Project object */;
 }

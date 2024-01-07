@@ -16,6 +16,9 @@ struct DashboardBaseView: View {
                 .navigationDestination(isPresented: $dashboardViewModel.showSplitBillView) {
                     SplitBillView()
                 }
+                .navigationDestination(isPresented: $dashboardViewModel.showQRScannerView) {
+                    QRScannerView()
+                }
         }
     }
 }
