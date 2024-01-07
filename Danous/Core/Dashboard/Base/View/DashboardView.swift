@@ -23,24 +23,9 @@ struct DashboardView: View {
                 VStack {
                     if showLoadingView {
                         Spacer()
-                        ProgressView()
-                            .tint(.white)
-                            .dynamicTypeSize(.accessibility1)
-                            .padding(44)
+                        progressView
                     } else {
-                        VStack {
-                            VStack(spacing: 44) {
-                                searchBarAndSettingsButton
-                                
-                                greetingTitle
-                                    .padding(.leading)
-                            }
-                            .padding()
-                            .padding(.bottom, 32)
-                            .foregroundStyle(.white)
-                            
-                            featuresGrid
-                        }
+                        dashboardBaseView
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -62,6 +47,29 @@ struct DashboardView: View {
 }
 
 extension DashboardView {
+    
+    private var progressView: some View {
+        ProgressView()
+            .tint(.white)
+            .dynamicTypeSize(.accessibility1)
+            .padding(44)
+    }
+    
+    private var dashboardBaseView: some View {
+        VStack {
+            VStack(spacing: 44) {
+                searchBarAndSettingsButton
+                
+                greetingTitle
+                    .padding(.leading)
+            }
+            .padding()
+            .padding(.bottom, 32)
+            .foregroundStyle(.white)
+            
+            featuresGrid
+        }
+    }
     
     private var searchBarAndSettingsButton: some View {
         HStack(spacing: 16) {
@@ -137,7 +145,7 @@ extension DashboardView {
                 }
                 Spacer()
                 featureButton(feature: .splitBill) {
-                    print("DEBUG: Pressed Split Bill")
+                    dashboardViewModel.showSplitBillView = true
                 }
             }
             

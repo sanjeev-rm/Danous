@@ -58,8 +58,11 @@ extension SearchView {
     
     private var xButton: some View {
         Button {
-            withAnimation(.easeOut) {
-                show = false
+            isTextFieldFocused = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                withAnimation(.easeOut) {
+                    show = false
+                }
             }
         } label: {
             Image(systemName: "xmark")

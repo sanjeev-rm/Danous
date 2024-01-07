@@ -10,4 +10,5 @@ import Foundation
 class DashboardViewModel: ObservableObject {
     
     @Published var showSearchView: Bool = false
+    @Published var showSplitBillView: Bool = false
 }

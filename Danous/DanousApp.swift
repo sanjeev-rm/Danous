@@ -29,7 +29,7 @@ struct DanousApp: App {
                     .environmentObject(authenticationViewModel)
                     .environmentObject(loginViewModel)
             } else if authenticationViewModel.isLoggedIn {
-                DashboardView()
+                DashboardBaseView()
                     .environmentObject(authenticationViewModel)
                     .environmentObject(dashboardViewModel)
             }
