@@ -10,18 +10,22 @@ import SwiftUI
 struct SearchView: View {
     
     @State var searchText: String = ""
+    @State var searchResults: [DanousUser] = []
     
     @Binding var show: Bool
     
     @FocusState var isTextFieldFocused: Bool
     
     var body: some View {
-        VStack {
+        VStack(spacing: 32) {
             searchBarAndSettingsButton
             
-            ScrollView {
-                
+            List {
+                ForEach($searchResults, id: \.self) { user in
+                    SearchPersonCardView(user: user)
+                }
             }
+            .listStyle(.plain)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
@@ -54,6 +58,9 @@ extension SearchView {
                 .foregroundStyle(Color(uiColor: .tertiarySystemGroupedBackground))
         )
         .shadow(radius: 8)
+        .onChange(of: searchText) {
+            searchResults = DanousUser.SAMPLE_USERS
+        }
     }
     
     private var xButton: some View {

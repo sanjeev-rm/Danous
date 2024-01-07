@@ -14,7 +14,6 @@ struct AddNewPersonView: View {
     @EnvironmentObject var splitBillViewModel: SplitBillViewModel
     
     @State var searchText: String = ""
-    
     @State var searchResults: [DanousUser] = []
     
     var body: some View {
@@ -23,38 +22,11 @@ struct AddNewPersonView: View {
             
             VStack(spacing: 16) {
                 
-                TextField("Search name or number", text: $searchText)
-                    .font(.title3.monospaced())
-                    .padding()
-                    .background {
-                        RoundedRectangle(cornerRadius: 24)
-                            .stroke(lineWidth: 3)
-                            .foregroundStyle(.tertiary)
-                    }
-                    .padding([.horizontal, .top])
+                textField
                 
-                Text("Searching Names shows only results from your contacts")
-                    .font(.footnote)
-                    .foregroundStyle(.tertiary)
-                    .padding(.horizontal, 24)
-                    .multilineTextAlignment(.center)
+                disclaimerText
                 
-                List {
-                    ForEach($searchResults, id: \.self) { user in
-                        SearchPersonCardView(user: user)
-                            .onTapGesture {
-                                
-                                splitBillViewModel.members.append(SplitBillMember(name: user.name.wrappedValue, mobile: user.mobile.wrappedValue, amountToPay: 0.0))
-                                
-                                DANOUS_SAMPLE_USERS.removeAll { danousUser in
-                                    danousUser.name == user.name.wrappedValue
-                                }
-                                
-                                dismiss()
-                            }
-                    }
-                }
-                .listStyle(.plain)
+                resultList
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -66,9 +38,51 @@ struct AddNewPersonView: View {
                 }
             }
             .onChange(of: searchText) { _, _ in
-                searchResults = DANOUS_SAMPLE_USERS
+                searchResults = DanousUser.SAMPLE_USERS
             }
         }
+    }
+}
+
+extension AddNewPersonView {
+    
+    private var textField: some View {
+        TextField("Search name or number", text: $searchText)
+            .font(.title3.monospaced())
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 24)
+                    .stroke(lineWidth: 3)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding([.horizontal, .top])
+    }
+    
+    private var disclaimerText: some View {
+        Text("Searching Names shows only results from your contacts")
+            .font(.footnote)
+            .foregroundStyle(.tertiary)
+            .padding(.horizontal, 24)
+            .multilineTextAlignment(.center)
+    }
+    
+    private var resultList: some View {
+        List {
+            ForEach($searchResults, id: \.self) { user in
+                SearchPersonCardView(user: user)
+                    .onTapGesture {
+                        
+                        splitBillViewModel.members.append(SplitBillMember(name: user.name.wrappedValue, mobile: user.mobile.wrappedValue, amountToPay: 0.0))
+                        
+                        DanousUser.SAMPLE_USERS.removeAll { danousUser in
+                            danousUser.name == user.name.wrappedValue
+                        }
+                        
+                        dismiss()
+                    }
+            }
+        }
+        .listStyle(.plain)
     }
 }
 

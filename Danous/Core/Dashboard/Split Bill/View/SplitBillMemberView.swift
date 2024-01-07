@@ -52,7 +52,6 @@ extension SplitBillMemberView {
         if !isFocused {
             guard let amountDouble = Double(amountString) else { return }
             member.amountToPay = amountDouble
-            print("DEBUG: member amount = \(member.amountToPay), newValue = \(amountString)")
         }
     }
 }

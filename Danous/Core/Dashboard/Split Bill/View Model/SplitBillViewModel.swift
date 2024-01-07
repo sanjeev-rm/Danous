@@ -13,6 +13,7 @@ class SplitBillViewModel: ObservableObject {
     @Published var showAddNewPersonView: Bool = false
     @Published var totalAmountString: String = ""
     @Published var johnDoeAmount: String = ""
+    @Published var showSplitActivatedView: Bool = false
     
     @Published var members: [SplitBillMember] = [SplitBillMember(name: "John Doe", mobile: "9082883516", amountToPay: 0)]
 }

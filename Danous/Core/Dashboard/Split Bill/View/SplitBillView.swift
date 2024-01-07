@@ -19,20 +19,9 @@ struct SplitBillView: View {
         VStack(spacing: 8) {
             totalAmountField
             
-            List {
-                ForEach($splitBillViewModel.members, id: \.self) { member in
-                    SplitBillMemberView(member: member)
-                        .focused($isInputActive)
-                }
-            }
-            .listStyle(.plain)
-            .scrollBounceBehavior(.basedOnSize)
+            membersList
             
-            DanousBasicButton(label: "Activate Split") {
-                // Activate Split
-            }
-            .padding()
-            .disabled(!canActivateSplit())
+            activateSplitButton
         }
         .navigationTitle("Split Bill")
         .navigationBarTitleDisplayMode(.inline)
@@ -69,6 +58,9 @@ struct SplitBillView: View {
                 .presentationDetents([.large, .medium])
                 .environmentObject(splitBillViewModel)
         }
+        .fullScreenCover(isPresented: $splitBillViewModel.showSplitActivatedView) {
+            SplitActivatedView()
+        }
     }
 }
 
@@ -85,6 +77,27 @@ extension SplitBillView {
         }
         .font(.largeTitle.monospaced())
         .padding()
+    }
+    
+    private var membersList: some View {
+        List {
+            ForEach($splitBillViewModel.members, id: \.self) { member in
+                SplitBillMemberView(member: member)
+                    .focused($isInputActive)
+            }
+        }
+        .listStyle(.plain)
+        .scrollBounceBehavior(.basedOnSize)
+    }
+    
+    private var activateSplitButton: some View {
+        DanousBasicButton(label: "Activate Split") {
+            withAnimation(.easeIn) {
+                splitBillViewModel.showSplitActivatedView = true
+            }
+        }
+        .padding()
+        .disabled(!canActivateSplit())
     }
 }
 
