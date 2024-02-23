@@ -19,6 +19,11 @@ struct SplitBillView: View {
         VStack(spacing: 8) {
             totalAmountField
             
+            payToField
+                .padding(.bottom, 8)
+            
+            Divider()
+            
             membersList
             
             activateSplitButton
@@ -53,14 +58,27 @@ struct SplitBillView: View {
                 }
             }
         }
-        .sheet(isPresented: $splitBillViewModel.showAddNewPersonView) {
-            AddNewPersonView()
-                .presentationDetents([.large, .medium])
+        .fullScreenCover(isPresented: $splitBillViewModel.showAddNewPersonView,
+               onDismiss: { splitBillViewModel.addRecentlySelectedPersonToSplitBillMembers() },
+               content: {
+            SearchContactOrNumberView(selectedUser: $splitBillViewModel.recentlySelectedPerson)
+        })
+        .fullScreenCover(isPresented: $splitBillViewModel.showPickPayToAccountView,
+                         onDismiss: { splitBillViewModel.setRecentlySelectedPersonAsPayTo() },
+                         content: {
+            PickPayToAccountView()
                 .environmentObject(splitBillViewModel)
-        }
+        })
         .fullScreenCover(isPresented: $splitBillViewModel.showSplitActivatedView) {
             SplitActivatedView()
         }
+        .onChange(of: splitBillViewModel.recentlySelectedPerson) { _, newValue in
+            if newValue != nil {
+                splitBillViewModel.showPickPayToAccountView = false
+                splitBillViewModel.showAddNewPersonView = false
+            }
+        }
+
     }
 }
 
@@ -79,15 +97,46 @@ extension SplitBillView {
         .padding()
     }
     
+    private var payToField: some View {
+        HStack {
+            Text("To ")
+                .font(.title2)
+                .fontWeight(.semibold)
+            Button {
+                splitBillViewModel.showPickPayToAccountView.toggle()
+            } label: {
+                if let payTo = splitBillViewModel.payTo {
+                    PersonCardView(user: .constant(payTo))
+                        .padding(8)
+                        .background(Color(.secondarySystemBackground))
+                        .cornerRadius(8)
+                } else {
+                    Text("Pick account")
+                        .foregroundStyle(.tertiary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        .background(Color(.secondarySystemBackground))
+                        .cornerRadius(8)
+                }
+            }
+            .foregroundColor(.primary)
+        }
+        .padding(.horizontal, 32)
+    }
+    
     private var membersList: some View {
         List {
             ForEach($splitBillViewModel.members, id: \.self) { member in
                 SplitBillMemberView(member: member)
                     .focused($isInputActive)
+                    .deleteDisabled(member.wrappedValue.mobile == splitBillViewModel.members[0].mobile)
             }
+            .onDelete(perform: { indexSet in
+                splitBillViewModel.removePersonFromMembers(indexSet: indexSet)
+            })
         }
         .listStyle(.plain)
-        .scrollBounceBehavior(.basedOnSize)
+        .scrollBounceBehavior(.always)
     }
     
     private var activateSplitButton: some View {
@@ -109,7 +158,9 @@ extension SplitBillView {
             sum = sum + member.amountToPay
         }
         
-        guard let totalAmountDouble = Double(splitBillViewModel.totalAmountString) else {
+        guard
+            let totalAmountDouble = Double(splitBillViewModel.totalAmountString),
+            splitBillViewModel.payTo != nil else {
             return false
         }
         

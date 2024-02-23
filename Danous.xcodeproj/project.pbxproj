@@ -30,11 +30,11 @@
 		C751C5912B24723B004E4EB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C751C5902B24723B004E4EB6 /* Assets.xcassets */; };
 		C751C5942B24723B004E4EB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C751C5932B24723B004E4EB6 /* Preview Assets.xcassets */; };
 		C77EEA962B48267E008BEF04 /* SplitBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEA952B48267E008BEF04 /* SplitBillView.swift */; };
-		C77EEA982B482811008BEF04 /* AddNewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEA972B482811008BEF04 /* AddNewPersonView.swift */; };
+		C77EEA982B482811008BEF04 /* SearchContactOrNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEA972B482811008BEF04 /* SearchContactOrNumberView.swift */; };
 		C77EEA9A2B483FAE008BEF04 /* DashboardBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEA992B483FAE008BEF04 /* DashboardBaseView.swift */; };
 		C77EEA9C2B4925DD008BEF04 /* SplitBillMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEA9B2B4925DD008BEF04 /* SplitBillMember.swift */; };
 		C77EEAA22B49268E008BEF04 /* SplitBillMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAA12B49268E008BEF04 /* SplitBillMemberView.swift */; };
-		C77EEAA42B4937B9008BEF04 /* SearchPersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAA32B4937B9008BEF04 /* SearchPersonCardView.swift */; };
+		C77EEAA42B4937B9008BEF04 /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAA32B4937B9008BEF04 /* PersonCardView.swift */; };
 		C77EEAA72B4938A4008BEF04 /* DanousUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAA62B4938A4008BEF04 /* DanousUser.swift */; };
 		C77EEAAB2B49C525008BEF04 /* SplitBillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAAA2B49C525008BEF04 /* SplitBillViewModel.swift */; };
 		C77EEAAD2B4A48EF008BEF04 /* SplitActivatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAAC2B4A48EF008BEF04 /* SplitActivatedView.swift */; };
@@ -42,6 +42,7 @@
 		C77EEAB62B4AB131008BEF04 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = C77EEAB52B4AB131008BEF04 /* CodeScanner */; };
 		C77EEABA2B4AB16F008BEF04 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77EEAB92B4AB16F008BEF04 /* CameraManager.swift */; };
 		C793754B2B45CF8A00F2A52A /* DashboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793754A2B45CF8A00F2A52A /* DashboardFeature.swift */; };
+		C7BAB4772B892B2D000D50EB /* PickPayToAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BAB4762B892B2D000D50EB /* PickPayToAccountView.swift */; };
 		C7FDB6EF2B2D5693007FED60 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6EE2B2D5693007FED60 /* AuthenticationViewModel.swift */; };
 		C7FDB6F12B2D5BB1007FED60 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6F02B2D5BB1007FED60 /* RegisterView.swift */; };
 		C7FDB6F32B2DDAF4007FED60 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FDB6F22B2DDAF4007FED60 /* ForgotPasswordView.swift */; };
@@ -76,17 +77,18 @@
 		C751C5902B24723B004E4EB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C751C5932B24723B004E4EB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C77EEA952B48267E008BEF04 /* SplitBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBillView.swift; sourceTree = "<group>"; };
-		C77EEA972B482811008BEF04 /* AddNewPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonView.swift; sourceTree = "<group>"; };
+		C77EEA972B482811008BEF04 /* SearchContactOrNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContactOrNumberView.swift; sourceTree = "<group>"; };
 		C77EEA992B483FAE008BEF04 /* DashboardBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBaseView.swift; sourceTree = "<group>"; };
 		C77EEA9B2B4925DD008BEF04 /* SplitBillMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBillMember.swift; sourceTree = "<group>"; };
 		C77EEAA12B49268E008BEF04 /* SplitBillMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBillMemberView.swift; sourceTree = "<group>"; };
-		C77EEAA32B4937B9008BEF04 /* SearchPersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPersonCardView.swift; sourceTree = "<group>"; };
+		C77EEAA32B4937B9008BEF04 /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
 		C77EEAA62B4938A4008BEF04 /* DanousUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanousUser.swift; sourceTree = "<group>"; };
 		C77EEAAA2B49C525008BEF04 /* SplitBillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBillViewModel.swift; sourceTree = "<group>"; };
 		C77EEAAC2B4A48EF008BEF04 /* SplitActivatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitActivatedView.swift; sourceTree = "<group>"; };
 		C77EEAB22B4AB0D6008BEF04 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		C77EEAB92B4AB16F008BEF04 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		C793754A2B45CF8A00F2A52A /* DashboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFeature.swift; sourceTree = "<group>"; };
+		C7BAB4762B892B2D000D50EB /* PickPayToAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPayToAccountView.swift; sourceTree = "<group>"; };
 		C7FDB6EE2B2D5693007FED60 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C7FDB6F02B2D5BB1007FED60 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		C7FDB6F22B2DDAF4007FED60 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -289,8 +291,9 @@
 			children = (
 				C77EEA952B48267E008BEF04 /* SplitBillView.swift */,
 				C77EEAA12B49268E008BEF04 /* SplitBillMemberView.swift */,
-				C77EEA972B482811008BEF04 /* AddNewPersonView.swift */,
 				C77EEAAC2B4A48EF008BEF04 /* SplitActivatedView.swift */,
+				C7BAB4762B892B2D000D50EB /* PickPayToAccountView.swift */,
+				C77EEA972B482811008BEF04 /* SearchContactOrNumberView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,7 +309,7 @@
 		C77EEAA52B493897008BEF04 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C77EEAA32B4937B9008BEF04 /* SearchPersonCardView.swift */,
+				C77EEAA32B4937B9008BEF04 /* PersonCardView.swift */,
 				C77EEAA62B4938A4008BEF04 /* DanousUser.swift */,
 			);
 			path = Common;
@@ -473,10 +476,10 @@
 				C77EEAAD2B4A48EF008BEF04 /* SplitActivatedView.swift in Sources */,
 				C74A261D2B2AEE1D000560C5 /* RegisterSetPasswordView.swift in Sources */,
 				C77EEAB32B4AB0D6008BEF04 /* QRScannerView.swift in Sources */,
-				C77EEAA42B4937B9008BEF04 /* SearchPersonCardView.swift in Sources */,
+				C77EEAA42B4937B9008BEF04 /* PersonCardView.swift in Sources */,
 				C77EEA962B48267E008BEF04 /* SplitBillView.swift in Sources */,
 				C77EEABA2B4AB16F008BEF04 /* CameraManager.swift in Sources */,
-				C77EEA982B482811008BEF04 /* AddNewPersonView.swift in Sources */,
+				C77EEA982B482811008BEF04 /* SearchContactOrNumberView.swift in Sources */,
 				C70C0F7D2B28857400FE2DD5 /* DanousImage.swift in Sources */,
 				C74A26152B2AE866000560C5 /* ForgotPasswordResetPasswordView.swift in Sources */,
 				C7FDB6F12B2D5BB1007FED60 /* RegisterView.swift in Sources */,
@@ -489,6 +492,7 @@
 				C70C0F7F2B288D4300FE2DD5 /* OnboardingProgressView.swift in Sources */,
 				C73795AD2B2A3C61009276DB /* DanousAuthenticationPageTitle.swift in Sources */,
 				C73795A92B29E40A009276DB /* ForgotPasswordMobileView.swift in Sources */,
+				C7BAB4772B892B2D000D50EB /* PickPayToAccountView.swift in Sources */,
 				C7FDB6F32B2DDAF4007FED60 /* ForgotPasswordView.swift in Sources */,
 				C77EEAA72B4938A4008BEF04 /* DanousUser.swift in Sources */,
 				C751C58F2B247239004E4EB6 /* ContentView.swift in Sources */,

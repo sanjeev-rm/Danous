@@ -18,11 +18,11 @@ struct SearchView: View {
     
     var body: some View {
         VStack(spacing: 32) {
-            searchBarAndSettingsButton
+            searchBarAndCloseButton
             
             List {
                 ForEach($searchResults, id: \.self) { user in
-                    SearchPersonCardView(user: user)
+                    PersonCardView(user: user)
                 }
             }
             .listStyle(.plain)
@@ -34,8 +34,8 @@ struct SearchView: View {
 
 extension SearchView {
     
-    private var searchBarAndSettingsButton: some View {
-        HStack(spacing: 16) {
+    private var searchBarAndCloseButton: some View {
+        HStack(spacing: 20) {
             searchBar
             xButton
         }

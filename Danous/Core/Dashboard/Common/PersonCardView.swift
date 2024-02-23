@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchPersonCardView: View {
+struct PersonCardView: View {
     
     var randomColors: [UIColor] = [.systemBlue, .systemCyan, .systemPink, .systemGreen, .systemOrange, .systemYellow, .systemMint, .systemBrown, .systemPurple]
     
@@ -34,5 +34,5 @@ struct SearchPersonCardView: View {
 }
 
 #Preview {
-    SearchPersonCardView(user: .constant(DanousUser(name: "Paris", mobile: "8765674093")))
+    PersonCardView(user: .constant(DanousUser(name: "Paris", mobile: "8765674093")))
 }

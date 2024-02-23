@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct AddNewPersonView: View {
+struct SearchContactOrNumberView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @EnvironmentObject var splitBillViewModel: SplitBillViewModel
-    
     @State var searchText: String = ""
     @State var searchResults: [DanousUser] = []
+    
+    @Binding var selectedUser: DanousUser?
     
     var body: some View {
         
@@ -44,7 +44,7 @@ struct AddNewPersonView: View {
     }
 }
 
-extension AddNewPersonView {
+extension SearchContactOrNumberView {
     
     private var textField: some View {
         TextField("Search name or number", text: $searchText)
@@ -69,14 +69,10 @@ extension AddNewPersonView {
     private var resultList: some View {
         List {
             ForEach($searchResults, id: \.self) { user in
-                SearchPersonCardView(user: user)
+                PersonCardView(user: user)
                     .onTapGesture {
                         
-                        splitBillViewModel.members.append(SplitBillMember(name: user.name.wrappedValue, mobile: user.mobile.wrappedValue, amountToPay: 0.0))
-                        
-                        DanousUser.SAMPLE_USERS.removeAll { danousUser in
-                            danousUser.name == user.name.wrappedValue
-                        }
+                        selectedUser = user.wrappedValue
                         
                         dismiss()
                     }
@@ -87,6 +83,6 @@ extension AddNewPersonView {
 }
 
 #Preview {
-    AddNewPersonView()
+    SearchContactOrNumberView(selectedUser: .constant(nil))
         .environmentObject(SplitBillViewModel())
 }
