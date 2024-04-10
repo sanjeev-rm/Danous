@@ -18,8 +18,6 @@ struct PickPayToAccountView: View {
             VStack {
                 optionsList
             }
-//            .navigationTitle("Pick account")
-//            .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -45,6 +43,7 @@ extension PickPayToAccountView {
                     .font(.body)
                     .fontWeight(.regular)
             }
+            .listRowBackground(Color(.systemBackground))
             
             NavigationLink {
                 SearchContactOrNumberView(selectedUser: $splitBillViewModel.recentlySelectedPerson)
@@ -54,6 +53,7 @@ extension PickPayToAccountView {
                     .font(.body)
                     .fontWeight(.regular)
             }
+            .listRowBackground(Color(.systemBackground))
         }
         .scrollContentBackground(.hidden)
     }

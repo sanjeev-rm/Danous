@@ -16,18 +16,6 @@ struct SplitBillMemberView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-//            Circle()
-//                .frame(width: 44)
-//                .foregroundStyle(Color(randomColors[member.profileColorId]).opacity(0.8))
-//            
-//            VStack(alignment: .leading) {
-//                Text(member.name)
-//                    .font(.callout)
-//                    .fontWeight(.semibold)
-//                Text(member.mobile)
-//                    .font(.caption)
-//                    .foregroundStyle(.secondary)
-//            }
             PersonCardView(user: .constant(DanousUser(name: member.name, mobile: member.mobile)))
             
             Spacer()
