@@ -13,12 +13,6 @@ struct DashboardBaseView: View {
     var body: some View {
         NavigationStack {
             DashboardView()
-                .navigationDestination(isPresented: $dashboardViewModel.showSplitBillView) {
-                    SplitBillView()
-                        .onDisappear {
-                            DanousUser.reloadSampleUsers()
-                        }
-                }
                 .navigationDestination(isPresented: $dashboardViewModel.showQRScannerView) {
                     QRScannerView()
                 }

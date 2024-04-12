@@ -43,6 +43,8 @@ struct DashboardView: View {
                 }
             }
         }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -80,7 +82,13 @@ extension DashboardView {
                     }
                 }
             
-            settingsButton
+            NavigationLink {
+                SettingsView()
+            } label: {
+                Image(systemName: "gearshape.fill")
+                    .foregroundStyle(Color(uiColor: .white))
+                    .font(.title)
+            }
         }
     }
     
@@ -96,15 +104,6 @@ extension DashboardView {
             RoundedRectangle(cornerRadius: 32)
                 .foregroundStyle(Color(uiColor: .tertiarySystemGroupedBackground))
         )
-    }
-    
-    private var settingsButton: some View {
-        Button {
-        } label: {
-            Image(systemName: "gearshape.fill")
-                .foregroundStyle(Color(uiColor: .white))
-                .font(.title)
-        }
     }
     
     private var greetingTitle: some View {
@@ -146,8 +145,13 @@ extension DashboardView {
                     print("DEBUG: Pressed Bank Trasfer")
                 }
                 Spacer()
-                featureButton(feature: .splitBill) {
-                    dashboardViewModel.showSplitBillView = true
+                NavigationLink {
+                    SplitBillView()
+                        .onDisappear {
+                            DanousUser.reloadSampleUsers()
+                        }
+                } label: {
+                    featureButtonView(feature: .splitBill)
                 }
             }
             
@@ -174,17 +178,21 @@ extension DashboardView {
         Button {
             action()
         } label: {
-            VStack(alignment: .center, spacing: 8) {
-                feature.image
-                    .dynamicTypeSize(.accessibility1)
-                    .foregroundStyle(.accent)
-                Text(feature.title)
-                    .font(.subheadline.bold())
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.secondary)
-            }
-            .frame(width: 80)
+            featureButtonView(feature: feature)
         }
+    }
+    
+    private func featureButtonView(feature: DashboardFeature) -> some View {
+        VStack(alignment: .center, spacing: 8) {
+            feature.image
+                .dynamicTypeSize(.accessibility1)
+                .foregroundStyle(.accent)
+            Text(feature.title)
+                .font(.subheadline.bold())
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+        }
+        .frame(width: 80)
     }
 }
 
