@@ -145,13 +145,8 @@ extension DashboardView {
                     print("DEBUG: Pressed Bank Trasfer")
                 }
                 Spacer()
-                NavigationLink {
-                    SplitBillView()
-                        .onDisappear {
-                            DanousUser.reloadSampleUsers()
-                        }
-                } label: {
-                    featureButtonView(feature: .splitBill)
+                featureButton(feature: .splitBill) {
+                    dashboardViewModel.showSplitBillView = true
                 }
             }
             

@@ -30,17 +30,17 @@ struct SplitBillView: View {
         }
         .navigationTitle("Split Bill")
         .navigationBarTitleDisplayMode(.inline)
-//        .navigationBarBackButtonHidden()
+        .navigationBarBackButtonHidden()
         .toolbar {
-//            ToolbarItem(placement: .topBarLeading) {
-//                Button {
-//                    dismiss()
-//                } label: {
-//                    Image(systemName: "chevron.left")
-//                        .dynamicTypeSize(.xxLarge)
-//                        .foregroundColor(.secondary)
-//                }
-//            }
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .dynamicTypeSize(.xxLarge)
+                        .foregroundColor(.secondary)
+                }
+            }
             
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

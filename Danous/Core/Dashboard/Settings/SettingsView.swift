@@ -18,12 +18,16 @@ struct SettingsView: View {
             
             nameAndMobile
                 .padding(.bottom, 32)
+                .listRowBackground(Color(.systemBackground))
             
             yourQRCode
+                .listRowBackground(Color(.systemBackground))
             
             supportSection
+                .listRowBackground(Color(.systemBackground))
             
             logoutButton
+                .listRowBackground(Color(.systemBackground))
             
         }
         .listStyle(.insetGrouped)
